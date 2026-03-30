@@ -10,14 +10,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.13</version>
+        <version>3.5.11</version>
         <relativePath/>
     </parent>
 
-    <!-- Your project identity -->
+    <!-- project identity -->
     <groupId>io.github.faisalkhan25</groupId>
-    <artifactId>QueryMind</artifactId>
-    <version>1.0.0</version>
+    <artifactId>query-mind</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
 
@@ -27,11 +27,7 @@
 
     <!-- Register all microservices as modules -->
     <modules>
-
+        <module>category-service</module>
     </modules>
-
-    <dependencyManagement>
-
-    </dependencyManagement>
 
 </project>
