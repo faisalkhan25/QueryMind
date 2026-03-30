@@ -1,0 +1,49 @@
+
+# --- Compiled Artifacts (Multi-module focus) ---
+**/target/
+**/build/
+**/out/
+**.class
+**.jar
+**.war
+
+# --- Logs & Temp ---
+*.log
+**/logs/
+hs_err_pid*
+replay_pid*
+
+# --- IDEs (IntelliJ & VS Code) ---
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+.classpath
+.project
+.settings/
+
+# --- Environment & Secrets (Crucial) ---
+.env
+.env.*
+!.env.example
+application-local.yml
+application-local.properties
+**/secrets/
+
+# --- Infrastructure / Docker Data ---
+
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+
+# Gradle wrapper cache
+.gradle/
+
+docker-compose.override.yml
+
+
+**/test-results/
+**/coverage/
+**.exec          # JaCoCo coverage files
