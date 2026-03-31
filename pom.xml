@@ -27,7 +27,9 @@
 
     <!-- Register all microservices as modules -->
     <modules>
+        <module>common-lib</module>
         <module>category-service</module>
+        <module>quiz-service</module>
     </modules>
 
 </project>
