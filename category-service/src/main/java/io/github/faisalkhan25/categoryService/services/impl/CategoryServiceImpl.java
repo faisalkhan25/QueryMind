@@ -3,12 +3,14 @@ package io.github.faisalkhan25.categoryService.services.impl;
 import io.github.faisalkhan25.categoryService.dtos.CategoryRequestDto;
 import io.github.faisalkhan25.categoryService.dtos.CategoryResponseDto;
 import io.github.faisalkhan25.categoryService.entities.Category;
+import io.github.faisalkhan25.categoryService.exceptions.ResourceNotFoundException;
 import io.github.faisalkhan25.categoryService.mappers.CategoryMapper;
 import io.github.faisalkhan25.categoryService.repositories.CategoryRepository;
 import io.github.faisalkhan25.categoryService.services.CategoryService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -46,6 +48,9 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public CategoryResponseDto getCategoryById(Long categoryId) {
-        return null;
+        String generatedId = "CATEGORY-" + UUID.randomUUID() + "-" + categoryId;
+        return categoryRepository.findById(generatedId)
+                .map(categoryMapper::toResponseDto)
+                .orElseThrow(() -> new ResourceNotFoundException("Category with id: " + categoryId + " doesn't exist"));
     }
 }
