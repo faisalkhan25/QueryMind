@@ -23,4 +23,10 @@ public class CategoryMapper {
                 .active(category.getActive())
                 .build();
     }
+
+    public void updateCategory(Category category, CategoryRequestDto requestDto) {
+        category.setTitle(requestDto.getTitle());
+        category.setDescription(requestDto.getDescription());
+        category.setActive(requestDto.getActive());
+    }
 }

@@ -30,13 +30,21 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public CategoryResponseDto updateCategory(CategoryRequestDto requestDto) {
-        return null;
+    public CategoryResponseDto updateCategory(CategoryRequestDto requestDto, String id) {
+        Category category = categoryRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("This category doesn't exist"));
+
+        categoryMapper.updateCategory(category, requestDto);
+
+        Category updatedCategory = categoryRepository.save(category);
+        return categoryMapper.toResponseDto(updatedCategory);
     }
 
     @Override
-    public void deleteCategory(CategoryRequestDto requestDto) {
-
+    public void deleteCategoryById(String categoryId) {
+        Category category = categoryRepository.findById(categoryId)
+                .orElseThrow(() -> new ResourceNotFoundException("Category not found"));
+        categoryRepository.deleteById(categoryId);
     }
 
     @Override
@@ -48,6 +56,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public CategoryResponseDto getCategoryById(Long categoryId) {
+
         String generatedId = "CATEGORY-" + UUID.randomUUID() + "-" + categoryId;
         return categoryRepository.findById(generatedId)
                 .map(categoryMapper::toResponseDto)
