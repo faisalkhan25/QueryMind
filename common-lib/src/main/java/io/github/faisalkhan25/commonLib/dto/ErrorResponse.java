@@ -24,10 +24,11 @@ public class ErrorResponse {
 
     private List<FieldError> fieldErrors;
 
-    @Data
-    @Builder
+    @Getter
+    @Setter
     @NoArgsConstructor
     @AllArgsConstructor
+    @Builder
     public static class FieldError {
         private String field;
         private String message;
