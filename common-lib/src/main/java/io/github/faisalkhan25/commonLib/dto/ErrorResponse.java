@@ -1,4 +1,4 @@
-package io.github.faisalkhan25.commonLib.exception;
+package io.github.faisalkhan25.commonLib.dto;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -12,11 +12,12 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Data
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class ErrorResponse {
+
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime timestamp;
-    private int status;
+    private Integer status;
     private String error;
     private String message;
     private String path;
