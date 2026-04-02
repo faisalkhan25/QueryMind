@@ -1,4 +1,4 @@
-package io.github.faisalkhan25.categoryService.exceptions;
+package io.github.faisalkhan25.quizService.exception;
 
 import io.github.faisalkhan25.commonLib.dto.ErrorResponse;
 import org.springframework.http.HttpStatus;
@@ -10,16 +10,17 @@ import org.springframework.web.context.request.WebRequest;
 import java.time.LocalDateTime;
 
 @RestControllerAdvice
-public class CategoryServiceExceptionHandler {
+public class QuizHandlerException {
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleResourceNotFoundException(ResourceNotFoundException e, WebRequest request) {
+    public ResponseEntity<ErrorResponse> handleResourceNotFoundException(
+            ResourceNotFoundException e, WebRequest request) {
         ErrorResponse errorResponse = ErrorResponse.builder()
                 .timestamp(LocalDateTime.now())
                 .status(HttpStatus.NOT_FOUND.value())
-                .error("Not Found")
-                .message("This resource does not exist")
+                .error("Quiz does not exist")
+                .message(e.getMessage())
                 .path(request.getDescription(false).replace("uri=", ""))
                 .build();
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
 }

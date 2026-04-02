@@ -18,12 +18,12 @@ public class Quiz {
     private String id;
     @Field("quiz_title")
     private String title;
-    private String category;
     private String description;
     private Long maxMarks;
     private Double timeLimit;
     private String createdBy;
-    private String totalQuestions;
-    private String imageUrl;
+    private Integer totalQuestions;
     private Long passingMarks;
+    private String categoryId;
+    private Boolean live;
 }

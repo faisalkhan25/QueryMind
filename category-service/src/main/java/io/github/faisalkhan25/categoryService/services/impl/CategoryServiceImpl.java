@@ -24,7 +24,9 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public CategoryResponseDto createCategory(CategoryRequestDto requestDto) {
+        String id = "CATEGORY-" + UUID.randomUUID().toString();
         Category category = categoryMapper.toEntity(requestDto);
+        category.setId(id);
         Category savedCategory = categoryRepository.save(category);
         return categoryMapper.toResponseDto(savedCategory);
     }
@@ -55,10 +57,9 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public CategoryResponseDto getCategoryById(Long categoryId) {
+    public CategoryResponseDto getCategoryById(String categoryId) {
 
-        String generatedId = "CATEGORY-" + UUID.randomUUID() + "-" + categoryId;
-        return categoryRepository.findById(generatedId)
+        return categoryRepository.findById(categoryId)
                 .map(categoryMapper::toResponseDto)
                 .orElseThrow(() -> new ResourceNotFoundException("Category with id: " + categoryId + " doesn't exist"));
     }

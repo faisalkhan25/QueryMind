@@ -28,7 +28,7 @@ public class CategoryController {
         return ResponseEntity.ok(categoryService.getAllCategories());
     }
     @GetMapping("/{id}")
-    public ResponseEntity<CategoryResponseDto> getCategoryById(@PathVariable Long id) {
+    public ResponseEntity<CategoryResponseDto> getCategoryById(@PathVariable String id) {
         return ResponseEntity.ok(categoryService.getCategoryById(id));
     }
     @PatchMapping("/{id}")
