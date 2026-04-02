@@ -8,7 +8,7 @@ import java.util.List;
 public interface QuizService {
     QuizResponseDto createQuiz(QuizRequestDto requestDto);
     QuizResponseDto updateQuiz(QuizRequestDto requestDto, String quizId);
-    QuizResponseDto getQuiz(String quizId);
+    QuizResponseDto getQuizById(String quizId);
     void deleteQuiz(String quizId);
     List<QuizResponseDto> getAllQuizzes();
 }

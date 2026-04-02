@@ -40,7 +40,7 @@ public class QuizServiceImpl implements QuizService {
     }
 
     @Override
-    public QuizResponseDto getQuiz(String quizId) {
+    public QuizResponseDto getQuizById(String quizId) {
         return quizRepository.findById(quizId)
                 .map(quiz -> modelMapper.map(quiz, QuizResponseDto.class))
                 .orElseThrow(() -> new ResourceNotFoundException("Quiz with id: " + quizId + " does not exist"));
