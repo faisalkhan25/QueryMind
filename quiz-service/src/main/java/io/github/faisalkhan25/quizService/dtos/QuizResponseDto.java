@@ -18,4 +18,6 @@ public class QuizResponseDto {
     private Long passingMarks;
     private String categoryId;
     private Boolean live;
+
+    private CategoryResponseDto categoryResponseDto;
 }

@@ -26,12 +26,17 @@ public class QuizServiceImpl implements QuizService {
     @Override
     public QuizResponseDto createQuiz(QuizRequestDto requestDto) {
         Quiz quiz = modelMapper.map(requestDto, Quiz.class);
+        // Before saving the quiz to database first check is the category id valid by making the
+        // call to category-service.
         Quiz savedQuiz = quizRepository.save(quiz);
         return modelMapper.map(savedQuiz, QuizResponseDto.class);
     }
 
     @Override
     public QuizResponseDto updateQuiz(QuizRequestDto requestDto, String quizId) {
+        // before updating the quiz check the category id is valid or not by making HTTP request
+        // category-service
+
         Quiz quiz = quizRepository.findById(quizId).orElseThrow(
                 () -> new ResourceNotFoundException("Quiz with id: " + quizId + " not found"));
         quizMapper.update(quiz, requestDto);
@@ -48,6 +53,8 @@ public class QuizServiceImpl implements QuizService {
 
     @Override
     public void deleteQuiz(String quizId) {
+        quizRepository.findById(quizId).orElseThrow(
+                () -> new ResourceNotFoundException("Quiz with id: " + quizId + " not found"));
         quizRepository.deleteById(quizId);
     }
 

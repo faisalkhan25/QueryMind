@@ -37,7 +37,7 @@ public class QuizRequestDto {
     @Positive(message = "Passing marks should be positive")
     private Long passingMarks;
 
-    @NotEmpty(message = "Provide the category ID")
+    @NotEmpty(message = "Provide the Valid Category ID")
     private String categoryId;
 
     @NotNull(message = "Field must not be null")
