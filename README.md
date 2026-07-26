@@ -24,9 +24,8 @@ Smart Quiz Platform lets a user pick a domain (e.g., a subject or topic area) an
     - **Discovery Service** — service registry so microservices can find and communicate with each other dynamically.
     - **API Gateway** — single entry point that routes incoming requests to the appropriate microservice.
 - **Polyglot Persistence** — each microservice uses the database best suited to its data:
-    - **MySQL**
-    - **PostgreSQL**
-    - **MongoDB**
+    - **Relational Database(MySQL, Postgres)**
+    - **Non Relational(MongoDB)**
 - **Docker Compose** — all microservices are containerized and orchestrated together for one-command local setup and consistent environments.
 
 ## Tech Stack
