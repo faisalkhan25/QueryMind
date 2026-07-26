@@ -10,7 +10,7 @@ A distributed, microservices-based quiz platform where users can select a domain
 
 Smart Quiz Platform lets a user pick a domain (e.g., a subject or topic area) and get a quiz generated specifically for that domain. The system is built as a set of independently deployable microservices that communicate with each other over the network, each owning its own data store.
 
-## Architecture Diagram
+## Architecture Diagram (In Progress)
 ![Smart Quiz Platform Architecture](docs/architecture.excalidraw.png)
 
 
