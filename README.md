@@ -60,16 +60,7 @@ docker-compose up -d
 
 ### Environment Variables
 A `.env.example` file is included in the project root, listing the required variables:
-\`\`\`
-SPRING_AI_API_KEY=your_api_key_here
-MYSQL_ROOT_PASSWORD=your_password
-POSTGRES_PASSWORD=your_password
-MONGO_INITDB_ROOT_PASSWORD=your_password
-\`\`\`
-Copy it to `.env` and fill in your own values before running:
-\`\`\`bash
-cp .env.example .env
-\`\`\`
+
 
 
 ## Status
