@@ -16,14 +16,23 @@ public class Quiz {
 
     @Id
     private String id;
+
     @Field("quiz_title")
     private String title;
+
     private String description;
+
     private Long maxMarks;
+
     private Double timeLimit;
+
     private String createdBy;
+
     private Integer totalQuestions;
+
     private Long passingMarks;
+
     private String categoryId;
+
     private Boolean live;
 }

@@ -60,8 +60,10 @@ public class QuizServiceImpl implements QuizService {
 
     @Override
     public List<QuizResponseDto> getAllQuizzes() {
-        return quizRepository.findAll().stream()
+        List<QuizResponseDto> result = quizRepository.findAll().stream()
                 .map(quiz -> modelMapper.map(quiz, QuizResponseDto.class))
                 .toList();
+
+        return result;
     }
 }

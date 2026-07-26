@@ -9,7 +9,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+
 public class QuizRequestDto {
 
     @NotEmpty(message = "Provide Title of Quiz")
@@ -42,4 +42,5 @@ public class QuizRequestDto {
 
     @NotNull(message = "Field must not be null")
     private Boolean live;
+
 }
