@@ -24,8 +24,8 @@ Smart Quiz Platform lets a user pick a domain (e.g., a subject or topic area) an
     - **Discovery Service** — service registry so microservices can find and communicate with each other dynamically.
     - **API Gateway** — single entry point that routes incoming requests to the appropriate microservice.
 - **Polyglot Persistence** — each microservice uses the database best suited to its data:
-    - **Relational Database(MySQL, Postgres)**
-    - **Non Relational(MongoDB)**
+    - **Relational Database (MySQL, Postgres)**
+    - **Non Relational (MongoDB)**
 - **Docker Compose** — all microservices are containerized and orchestrated together for one-command local setup and consistent environments.
 
 ## Tech Stack
@@ -51,14 +51,26 @@ Smart Quiz Platform lets a user pick a domain (e.g., a subject or topic area) an
 
 ```bash
 # Clone the repository
-git clone <repo-url>
-cd smart-quiz-platform
+git clone <https://github.com/faisalkhan25/QueryMind.git>
+cd QueryMind
 
 # Start all services with Docker Compose
-docker-compose up --build
+docker-compose up -d
 ```
 
-> Update this section with exact service ports, environment variables, and prerequisites (e.g., API keys for Spring AI) as the project matures.
+### Environment Variables
+A `.env.example` file is included in the project root, listing the required variables:
+\`\`\`
+SPRING_AI_API_KEY=your_api_key_here
+MYSQL_ROOT_PASSWORD=your_password
+POSTGRES_PASSWORD=your_password
+MONGO_INITDB_ROOT_PASSWORD=your_password
+\`\`\`
+Copy it to `.env` and fill in your own values before running:
+\`\`\`bash
+cp .env.example .env
+\`\`\`
+
 
 ## Status
 
