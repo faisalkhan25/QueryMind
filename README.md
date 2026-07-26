@@ -59,7 +59,7 @@ docker-compose up -d
 ```
 
 ### Environment Variables
-A: `.env.example` file is included in the project root, listing the required variables.
+A: `.env.example` file is included in the project root, listing the required variables.<br>
 B: Create a config file and mention the environment variables. 
 
 
