@@ -61,14 +61,6 @@ docker-compose up --build
 
 > Update this section with exact service ports, environment variables, and prerequisites (e.g., API keys for Spring AI) as the project matures.
 
-## Roadmap
-
-- [ ] Finalize domain-to-database mapping across services
-- [ ] Add authentication/authorization between services
-- [ ] Add persistence/validation for AI-generated quiz content
-- [ ] Expand test coverage
-- [ ] Deployment setup (CI/CD)
-
 ## Status
 
 This project is under active development. Architecture and features described above are being implemented incrementally — this README will be updated as new components are completed.
